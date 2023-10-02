@@ -22,7 +22,7 @@ public class Epreuve_Athlete {
     @JoinColumn(name = "epreuve_id")
     private Epreuve epreuve;
 
-    private String place;
+    private Long place;
     private Date dateResultat;
 
 

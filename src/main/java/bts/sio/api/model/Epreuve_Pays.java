@@ -3,6 +3,8 @@ package bts.sio.api.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 @Entity
 @Table(name = "epreuve_pays")
@@ -19,5 +21,8 @@ public class Epreuve_Pays {
     @ManyToOne
     @JoinColumn(name = "epreuve_id")
     private Epreuve epreuve;
+
+    private Long place;
+    private Date DateResult;
 
 }
