@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.Data;
 
-    @Data
+import java.sql.Date;
+
+@Data
     @Entity
     @Table(name = "epreuve")
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
@@ -13,15 +15,14 @@ import lombok.Data;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-        private String nom ;
+        private String libelle ;
+        private Date dateDebut;
+        private Date dateFin;
 
         @ManyToOne
         @JoinColumn(name = "sport_id")
         private Sport sport;
 
-        @ManyToOne
-        @JoinColumn(name = "typeepreuve_id")
-        private TypeEpreuve typeEpreuve;
     }
 
 
