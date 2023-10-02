@@ -33,9 +33,9 @@ public class EpreuveController {
         if(e.isPresent()) {
             Epreuve currentEpreuve = e.get();
 
-            String nom = epreuve.getNom();
+            String nom = epreuve.getLibelle();
             if(nom != null) {
-                currentEpreuve.setNom(nom);
+                currentEpreuve.setLibelle(nom);
             }
             epreuveService.saveEpreuve(currentEpreuve);
             return currentEpreuve;
