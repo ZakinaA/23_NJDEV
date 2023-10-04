@@ -3,21 +3,20 @@ package bts.sio.api.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-
 import java.time.LocalDate;
 
 @Data
 @Entity
-@Table(name = "epreuve_athlete")
-public class Epreuve_Athlete {
+@Table(name = "epreuve_pays")
+public class Epreuve_Pays {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "athlete_id")
-    private Athlete athlete;
+    @JoinColumn(name = "pays_id")
+    private Pays pays;
 
     @ManyToOne
     @JoinColumn(name = "epreuve_id")
@@ -26,10 +25,7 @@ public class Epreuve_Athlete {
     @Column(name = "place")
     private Long place;
 
-    @Column(name = "date_Resultat")
-    private LocalDate dateResultat;
-
+    @Column(name = "date_result")
+    private LocalDate DateResult;
 
 }
-
-

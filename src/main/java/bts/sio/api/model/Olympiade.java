@@ -12,12 +12,17 @@ public class Olympiade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="numero")
     private String numero ;
-    private Integer annee;
-    private String ville ;
 
-    @ManyToOne
-    @JoinColumn(name = "pays_id")
-    private Pays pays;
+    @Column(name="annee")
+    private Integer annee;
+
+    @Column(name="ville")
+    private String ville ;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "pays_id")
+//    private Pays pays;
 
 }
