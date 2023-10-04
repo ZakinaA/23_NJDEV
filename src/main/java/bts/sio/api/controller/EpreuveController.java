@@ -51,10 +51,10 @@ public class EpreuveController {
                 currentEpreuve.setDateFin(dateFin);
             }
 
-//            Sport sport_id = epreuve.getSport();
-//            if(sport_id != null){
-//                currentEpreuve.setSport(sport_id);
-//            }
+            Sport sport_id = epreuve.getSport();
+            if(sport_id != null){
+                currentEpreuve.setSport(sport_id);
+            }
             epreuveService.saveEpreuve(currentEpreuve);
             return currentEpreuve;
         } else {

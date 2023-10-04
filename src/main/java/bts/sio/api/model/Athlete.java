@@ -20,8 +20,8 @@ public class Athlete {
     @Column(name="prenom")
     private String prenom;
 
-    @Column(name="datenaiss")
-    private LocalDate dateNaiss;
+    @Column(name="date_naissance")
+    private LocalDate date_naissance;
 
     @ManyToOne
     @JoinColumn(name = "pays_id")
