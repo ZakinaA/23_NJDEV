@@ -7,6 +7,7 @@ import bts.sio.api.service.Epreuve_AthleteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Optional;
 @RestController
@@ -52,7 +53,7 @@ public class Epreuve_AthleteController {
                 currentEpreuve_Athlete.setPlace(place);
             }
 
-            Date dateResultat = epreuveAthlete.getDateResultat();
+            LocalDate dateResultat = epreuveAthlete.getDateResultat();
             if(dateResultat != null){
                 currentEpreuve_Athlete.setDateResultat(dateResultat);
             }

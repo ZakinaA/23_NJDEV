@@ -1,15 +1,14 @@
 package bts.sio.api.controller;
 
-import bts.sio.api.model.Athlete;
+
 import bts.sio.api.model.Epreuve;
 import bts.sio.api.model.Epreuve_Pays;
 import bts.sio.api.model.Pays;
 import bts.sio.api.service.Epreuve_PaysService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Optional;
 
 @RestController
@@ -55,7 +54,7 @@ public class Epreuve_PaysController {
                 currentEpreuve_Pays.setPlace(place);
             }
 
-            Date DateResultat = epreuvePays.getDateResult();
+            LocalDate DateResultat = epreuvePays.getDateResult();
             if(DateResultat != null){
                 currentEpreuve_Pays.setDateResult(DateResultat);
             }

@@ -13,7 +13,6 @@ import java.util.Set;
 @Data
 @Entity
 @Table(name = "sport")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Sport {
 
     @Id
@@ -26,11 +25,12 @@ public class Sport {
     @Column(name="descriptif")
     private String descriptif;
 
+    @Column(name="nom_image")
+    private String nom_image;
+
     @ManyToOne
     @JoinColumn(name = "olympiade_id")
-    private Olympiade olympiade;
+    private Olympiade olympiade_id;
 
-    @OneToMany(mappedBy = "sport")
-    private List<Epreuve> lesEpreuves;
 
 }

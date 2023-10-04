@@ -46,9 +46,9 @@ public class SportController {
             if(descriptif != null) {
                 currentSport.setDescriptif(descriptif);;
             }
-            Olympiade olympiade = sport.getOlympiade();
+            Olympiade olympiade = sport.getOlympiade_id();
             if(olympiade != null) {
-                currentSport.setOlympiade(olympiade);;
+                currentSport.setOlympiade_id(olympiade);;
             }
             sportService.saveSport(currentSport);
             return currentSport;

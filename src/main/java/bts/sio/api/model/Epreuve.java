@@ -15,9 +15,17 @@ import java.util.Date;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
+
+
+        @Column(name = "libelle")
         private String libelle ;
+
+        @Column(name = "date_debut")
         private Date dateDebut;
+
+        @Column(name = "date_fin")
         private Date dateFin;
+
 
         @ManyToOne
         @JoinColumn(name = "sport_id")

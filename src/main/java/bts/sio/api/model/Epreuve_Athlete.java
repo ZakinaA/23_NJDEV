@@ -3,7 +3,8 @@ package bts.sio.api.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Date;
+
+import java.time.LocalDate;
 
 @Data
 @Entity
@@ -22,8 +23,11 @@ public class Epreuve_Athlete {
     @JoinColumn(name = "epreuve_id")
     private Epreuve epreuve;
 
+    @Column(name = "place")
     private Long place;
-    private Date dateResultat;
+
+    @Column(name = "date_Resultat")
+    private LocalDate dateResultat;
 
 
 }
