@@ -15,7 +15,7 @@ public class Epreuve_AthleteService {
     private Epreuve_AthleteRepository epreuveAthleteRepository;
 
     public Optional<Epreuve_Athlete> getEpreuve_Athlete(final Long id) {
-        return epreuveAthleteRepository.findById(id);
+        return epreuveAthleteRepository.findByEpreuve_Id(id);
     }
 
     public Iterable<Epreuve_Athlete> getEpreuves_Athletes() {
