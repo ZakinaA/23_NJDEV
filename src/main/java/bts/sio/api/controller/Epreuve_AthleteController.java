@@ -5,6 +5,7 @@ import bts.sio.api.model.Epreuve;
 import bts.sio.api.model.Epreuve_Athlete;
 import bts.sio.api.service.Epreuve_AthleteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -21,13 +22,9 @@ public class Epreuve_AthleteController {
 
 
     @GetMapping("/epreuve_athlete/{id}")
-    public Epreuve_Athlete getSport(@PathVariable("id")final Long id){
+    public ResponseEntity<Epreuve_Athlete> getEpreuve_Athlete(@PathVariable("id") final Long id) {
         Optional<Epreuve_Athlete> epreuveAthlete = epreuveAthleteService.getEpreuve_Athlete(id);
-        if(epreuveAthlete.isPresent()) {
-            return epreuveAthlete.get();
-        } else {
-            return null;
-        }
+        return epreuveAthlete.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
     @GetMapping("/epreuves_athletes")
     public Iterable<Epreuve_Athlete> getEpreuves_Athletes() { return epreuveAthleteService.getEpreuves_Athletes();}
