@@ -6,6 +6,7 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Data
@@ -14,8 +15,8 @@ public class Epreuve_AthleteService {
     @Autowired
     private Epreuve_AthleteRepository epreuveAthleteRepository;
 
-    public Optional<Epreuve_Athlete> getEpreuve_Athlete(final Long id) {
-        return epreuveAthleteRepository.findById(id);
+    public List<Epreuve_Athlete> getEpreuve_Athlete(final Long id) {
+        return epreuveAthleteRepository.findByEpreuve_Id(id);
     }
 
     public Iterable<Epreuve_Athlete> getEpreuves_Athletes() {
